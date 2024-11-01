@@ -6,11 +6,11 @@ import za.co.ditorosystems.inventoryservice.dto.ProductRequest;
 import za.co.ditorosystems.inventoryservice.dto.Response;
 
 public interface ProductService {
-    ResponseEntity<Response> saveProduct(@NonNull final ProductRequest productRequest);
+    ResponseEntity<Response> save(@NonNull final ProductRequest productRequest);
 
-    ResponseEntity<Response> updateProduct(@NonNull final ProductRequest productRequest);
+    ResponseEntity<Response> update(@NonNull final ProductRequest productRequest);
 
-    ResponseEntity<Response> deleteProduct(@NonNull final ProductRequest productRequest);
+    ResponseEntity<Response> delete(@NonNull final ProductRequest productRequest);
 
     ResponseEntity<Response> getProductById(@NonNull final Long id);
 

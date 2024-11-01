@@ -20,10 +20,10 @@ import java.math.BigDecimal;
 @Table(name = "product")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String code;
     private String name;
-    private String description;
     private BigDecimal price;
+    private String description;
 }

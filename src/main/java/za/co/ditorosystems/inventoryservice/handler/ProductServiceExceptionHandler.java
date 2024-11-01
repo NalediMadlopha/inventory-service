@@ -10,6 +10,7 @@ import za.co.ditorosystems.inventoryservice.exception.ProductServiceBusinessExce
 
 @RestControllerAdvice
 public class ProductServiceExceptionHandler {
+
     @ExceptionHandler(ProductServiceBusinessException.class)
     public ResponseEntity<Response> handleProductServiceBusinessException(ProductServiceBusinessException exception) {
         Response response = Response.builder()
@@ -18,4 +19,5 @@ public class ProductServiceExceptionHandler {
                 .build();
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
     }
+
 }

@@ -24,20 +24,19 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
 
     @Override
-    public ResponseEntity<Response> saveProduct(@NonNull final ProductRequest productRequest) {
+    public ResponseEntity<Response> save(@NonNull final ProductRequest productRequest) {
         log.info("ProductServiceImpl.saveProduct: Saving product {}", productRequest);
         Response<Object> response;
 
         try {
             Product product = ProductMapper.MAPPER.toProduct(productRequest);
             ProductResponse productResponse = ProductMapper.MAPPER.toProductResponse(productRepository.save(product));
-
             response = Response.builder()
                     .status(Status.SUCCESSFUL)
                     .data(productResponse)
                     .message("Product saved successfully")
                     .build();
-            log.info("ProductServiceImpl.saveProduct: Successfully saved product {}", productRequest);
+            log.info("ProductServiceImpl.saveProduct: Successfully saved product {}", productResponse);
         } catch (Exception ex) {
             log.error("ProductServiceImpl.saveProduct: Error saving product", ex);
             throw new ProductServiceBusinessException("Error saving product");
@@ -46,12 +45,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ResponseEntity<Response> updateProduct(@NonNull final ProductRequest productRequest) {
+    public ResponseEntity<Response> update(@NonNull final ProductRequest productRequest) {
         return null;
     }
 
     @Override
-    public ResponseEntity<Response> deleteProduct(@NonNull final ProductRequest productRequest) {
+    public ResponseEntity<Response> delete(@NonNull final ProductRequest productRequest) {
         return null;
     }
 
@@ -64,4 +63,5 @@ public class ProductServiceImpl implements ProductService {
     public ResponseEntity<Response> getAllProducts() {
         return null;
     }
+
 }

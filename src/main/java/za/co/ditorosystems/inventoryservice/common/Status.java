@@ -1,12 +1,14 @@
 package za.co.ditorosystems.inventoryservice.common;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@Getter
 @AllArgsConstructor
 public enum Status {
-    SUCCESSFUL("SUCCESSFUL"),
     FAILED("FAILED"),
+    SUCCESSFUL("SUCCESSFUL"),
     IN_PROGRESS("IN_PROGRESS");
 
-    private String label;
+    private final String label;
 }

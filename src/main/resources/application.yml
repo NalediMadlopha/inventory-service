@@ -7,6 +7,5 @@ spring:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:inventory_db
     username: sa
-    password: pwd123
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
