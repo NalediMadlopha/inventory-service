@@ -25,7 +25,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ResponseEntity<Response> save(@NonNull final ProductRequest productRequest) {
-        log.info("ProductServiceImpl.saveProduct: Saving product {}", productRequest);
+        log.info("ProductServiceImpl.save: Saving product {}", productRequest);
         Response<Object> response;
 
         try {
@@ -36,9 +36,9 @@ public class ProductServiceImpl implements ProductService {
                     .data(productResponse)
                     .message("Product saved successfully")
                     .build();
-            log.info("ProductServiceImpl.saveProduct: Successfully saved product {}", productResponse);
+            log.info("ProductServiceImpl.save: Successfully saved product {}", productResponse);
         } catch (Exception ex) {
-            log.error("ProductServiceImpl.saveProduct: Error saving product", ex);
+            log.error("ProductServiceImpl.save: Error saving product", ex);
             throw new ProductServiceBusinessException("Error saving product");
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
