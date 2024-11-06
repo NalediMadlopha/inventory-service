@@ -36,4 +36,5 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=inventory-service -Dsonar.projectName='inventory-service'
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=inventory-service -Dsonar.projectName='inventory-service' -Dsonar.url=http://172.20.0.3:9000/ -Dsonar.login=squ_d386a5728ae76b87defdfa6ad1abb2fc25851208 -Dsonar.projectName=inventory-service \
+          -Dsonar.java.binaries=.
